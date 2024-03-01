@@ -1,0 +1,62 @@
+plugins {
+    id 'java'
+    id 'io.qameta.allure' version '2.11.2'
+}
+
+group = 'ru.veronika'
+version = '1.0-SNAPSHOT'
+
+def allureVersion = "2.25.0",
+    selenideVersion = "6.19.1"
+
+allure {
+    allureReport {
+        version.set(allureVersion)
+    }
+    adapter { // отвечает за появление папки allure-results
+        aspectjWeaver.set(true) //обработка аннотации @Step
+        frameworks {
+            junit5 { //название фреймворка
+                adapterVersion.set(allureVersion) //версия интерации фреймворка и аллюр
+            }
+        }
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation(
+            "org.junit.jupiter:junit-jupiter:5.9.3",
+            "com.github.javafaker:javafaker:1.0.2",
+            "io.qameta.allure:allure-selenide:$allureVersion",
+            "com.codeborne:selenide:$selenideVersion",
+            'org.slf4j:slf4j-simple:2.0.7'
+    )
+}
+
+tasks.withType(Test) {
+    useJUnitPlatform()
+    systemProperties(System.getProperties())
+
+    testLogging {
+        lifecycle {
+            events "started", "skipped", "failed", "standard_error", "standard_out"
+            exceptionFormat "short"
+        }
+    }
+}
+
+task local_regress(type: Test) {
+    useJUnitPlatform {
+        includeTags("local")
+    }
+}
+
+task regress_with_properties(type: Test) {
+    useJUnitPlatform {
+        includeTags("regress")
+    }
+}
