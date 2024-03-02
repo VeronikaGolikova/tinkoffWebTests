@@ -7,7 +7,7 @@ group = 'ru.veronika'
 version = '1.0-SNAPSHOT'
 
 def allureVersion = "2.25.0",
-    selenideVersion = "6.19.1"
+    selenideVersion = "6.18.0"
 
 allure {
     allureReport {
