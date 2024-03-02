@@ -11,7 +11,6 @@ import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import pages.MainCianPage;
 import pages.SearchResultPage;
-import test.searchLocal.TestBase;
 
 import java.util.Locale;
 
