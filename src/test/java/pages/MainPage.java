@@ -12,11 +12,10 @@ public class MainPage {
     private final SelenideElement
             fizClient = $(byText("Частным лицам")),
             debetCard = $x("//a[@href='/cards/debit-cards/']"),
-//            debetCard = $(byText("Дебетовые карты")),
             premiumDebetCard = $x("//a[@href='/cards/debit-cards/premium/']"),
             travelerDebetCard = $x("//a[@href='/cards/debit-cards/travel/']"),
             driverDebetCard = $x("//a[@href='/cards/debit-cards/driver/']"),
-            gamesDebetCard = $(byText("Геймеру")),
+            gamesDebetCard = $x("//a[@href='/cards/debit-cards/games/']"),
             shoppingDebetCard = $x("//a[@href='/cards/debit-cards/shopping/']");
 ;
 
