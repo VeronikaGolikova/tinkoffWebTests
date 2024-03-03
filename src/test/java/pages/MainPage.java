@@ -16,7 +16,7 @@ public class MainPage {
             premiumDebetCard = $x("//a[@href='/cards/debit-cards/premium/']"),
             travelerDebetCard = $x("//a[@href='/cards/debit-cards/travel/']"),
             driverDebetCard = $x("//a[@href='/cards/debit-cards/driver/']"),
-            gamesDebetCard = $x("//a[@href='/cards/debit-cards/games/']"),
+            gamesDebetCard = $(byText("Геймеру")),
             shoppingDebetCard = $x("//a[@href='/cards/debit-cards/shopping/']");
 ;
 
