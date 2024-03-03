@@ -26,9 +26,10 @@ public class MainPage {
         return this;
     }
 
-    @Step("Открыть меню для частных лиц")
+    @Step("Открыть меню для частных лиц и перейти в раздел дебетовых карт")
     public MainPage openFizicClientMenu() {
         fizClient.hover();
+        debetCard.click();
         return this;
     }
 
