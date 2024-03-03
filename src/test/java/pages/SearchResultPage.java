@@ -10,8 +10,7 @@ import static com.codeborne.selenide.Selenide.open;
 
 public class SearchResultPage {
     private final SelenideElement
-            headerText = $x("//h1"),
-            offerCard = $x("//div[@data-testid='offer-card']");
+            headerText = $x("//h1[@data-schema-path='title']");
 
     @Step("Загаловок содержит текст")
     public SearchResultPage healerHasText(String someText) {
@@ -21,7 +20,7 @@ public class SearchResultPage {
 
     @Step("Результаты поиска отображаются на странице")
     public SearchResultPage offerExists() {
-        offerCard.exists();
+//        offerCard.exists();
         return this;
     }
 

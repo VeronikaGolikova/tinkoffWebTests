@@ -8,7 +8,7 @@ import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$x;
 import static com.codeborne.selenide.Selenide.open;
 
-public class MainTestbasePage {
+public class MainPage {
     private final SelenideElement skills = $(byText("Навыки")),
             howSearchBugs = $(byText("Как искать баги")),
             theory = $(byText("Теория в картинках")),
@@ -19,7 +19,10 @@ public class MainTestbasePage {
 
 
 
-            filterPrice = $x("//div[@data-mark='FilterPrice']/button"),
+            fizicClient = $x("//span[@data-test='menu-item-0-title']"),
+            debetCard = $x("//span[@data-test='text-item-0-1-text']"),
+            childCard = $x("//span[@data-test='text-item-0-3-text']"),
+
             minPrice = $x("//input[@placeholder='от']"),
 
             city = $("#geo-suggest-input"),
@@ -28,47 +31,67 @@ public class MainTestbasePage {
             submitButton = $x("//button[@type='submit']");
 
     @Step("Открыть главную страницу")
-    public MainTestbasePage openPage() {
+    public MainPage openPage() {
         open("");
         return this;
     }
+
+    @Step("Открыть меню для частных лиц")
+    public MainPage openFizicClientMenu() {
+        fizicClient.hover();
+        return this;
+    }
+
+    @Step("Перейти на страницу дебетовых карт")
+    public MainPage openDebetCardsPage() {
+        debetCard.click();
+        return this;
+    }
+
+    @Step("Перейти на страницу детских  карт")
+    public MainPage openChildCardsPage() {
+        childCard.click();
+        return this;
+    }
+
+
     @Step("Нажать на Навыки")
-    public MainTestbasePage clickSkills() {
+    public MainPage clickSkills() {
         skills.click();
         return this;
     }
     @Step("Нажать на Как искать баги")
-    public MainTestbasePage clickHowSearchBugs() {
+    public MainPage clickHowSearchBugs() {
         howSearchBugs.click();
         return this;
     }
 
     @Step("Нажать на Теория в картинках")
-    public MainTestbasePage clickTheory() {
+    public MainPage clickTheory() {
         theory.click();
         return this;
     }
 
     @Step("Нажать на Test it")
-    public MainTestbasePage clickTestIt() {
+    public MainPage clickTestIt() {
         testIt.click();
         return this;
     }
 
     @Step("Нажать Книга")
-    public MainTestbasePage clickBook() {
+    public MainPage clickBook() {
         book.click();
         return this;
     }
 
     @Step("Нажать Курсы")
-    public MainTestbasePage clickCourses() {
+    public MainPage clickCourses() {
         courses.click();
         return this;
     }
 
     @Step("Нажать Найти")
-    public MainTestbasePage submit() {
+    public MainPage submit() {
         submitButton.click();
         return this;
     }

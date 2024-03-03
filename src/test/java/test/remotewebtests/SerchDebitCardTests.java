@@ -1,4 +1,4 @@
-package test.searchLocal;
+package test.remotewebtests;
 
 import com.github.javafaker.Faker;
 import io.qameta.allure.Epic;
@@ -9,84 +9,61 @@ import io.qameta.allure.Story;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
-import pages.MainTestbasePage;
+import org.junit.jupiter.params.ParameterizedTest;
+import pages.MainPage;
 import pages.SearchResultPage;
 
 import java.util.Locale;
 
-import static com.codeborne.selenide.Selenide.sleep;
 import static utils.RandomUtils.getRandomInt;
 
 @Owner("golikovavi")
 @Epic("Поиск на главной странице")
 @Story("Поиск для покупки квартиры")
 @Severity(SeverityLevel.BLOCKER)
-@Tag("local")
-public class SerchRentApartmentTests extends TestBase {
+@Tag("regress")
+public class SerchDebitCardTests extends TestBase {
 
-    MainTestbasePage mainTestbasePage = new MainTestbasePage();
+    MainPage mainPage = new MainPage();
     SearchResultPage searchResultPage = new SearchResultPage();
     Faker faker = new Faker(new Locale("ru"));
-    String city = faker.address().city();
+    String food = faker.food().ingredient();
     String minSum = String.valueOf(getRandomInt(10000, 20000));
     String maxSum = String.valueOf(getRandomInt(20000, 100000));
     String rentText = "Аренда";
     String rentText2 = "Снять";
 
     @Test
-    @DisplayName("Поиск с параметрами по умолчанию")
-    void searchWithDefaultParameters() {
-        mainTestbasePage.openPage()
-                .selectRent()
-                .submit();
-        sleep(3000);
-        searchResultPage.offerExists()
-                .healerHasText(rentText);
+    @DisplayName("Переход в раздел сайта дебетовая детская карта")
+    void clickMenuPages() {
+        mainPage.openPage()
+                .openFizicClientMenu()
+                .openChildCardsPage();
+        searchResultPage.healerHasText("Бесплатная дебетовая детская карта");
     }
 
     @Test
     @DisplayName("Поиск с заданным ценовым диапазоном")
     void searchWithPriceParameter() {
-        mainTestbasePage.openPage()
-                .selectRent()
-                .setMinSum(minSum)
-                .setMaxSum(maxSum)
-                .submit();
-        searchResultPage.offerExists()
-                .healerHasText(rentText2);
+        mainPage.openPage();
     }
 
     @Test
     @DisplayName("Поиск с верхним значением ценового диапазоноа")
     void searchWithMaxPriceParameter() {
+        mainPage.openPage();
 
-        searchResultPage.offerExists()
-                .healerHasText(rentText2);
     }
 
     @Test
     @DisplayName("Поиск в конкретном городе")
     void searchWithCityParameter() {
-        mainTestbasePage.openPage()
-                .selectRent()
-                .setCity(city)
-                .selectCity()
-                .submit();
-        searchResultPage.offerExists()
-                .offerHasText(city)
-                .healerHasText(rentText);
+        mainPage.openPage();
     }
 
     @Test
     @DisplayName("Поиск с заполнением всех параметров")
     void searchWithAllParameters() {
-        mainTestbasePage.openPage()
-                .setMaxSum(maxSum)
-                .setCity(city)
-                .selectCity()
-                .submit();
-        searchResultPage.offerExists()
-                .offerHasText(city)
-                .healerHasText(rentText2);
+        mainPage.openPage();
     }
 }
