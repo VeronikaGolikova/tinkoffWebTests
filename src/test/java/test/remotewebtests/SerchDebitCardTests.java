@@ -1,69 +1,77 @@
 package test.remotewebtests;
 
-import com.github.javafaker.Faker;
 import io.qameta.allure.Epic;
 import io.qameta.allure.Owner;
 import io.qameta.allure.Severity;
 import io.qameta.allure.SeverityLevel;
-import io.qameta.allure.Story;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.params.ParameterizedTest;
 import pages.MainPage;
 import pages.SearchResultPage;
 
-import java.util.Locale;
-
-import static utils.RandomUtils.getRandomInt;
-
 @Owner("golikovavi")
-@Epic("Поиск на главной странице")
-@Story("Поиск для покупки квартиры")
+@Epic("Фильтрация по категориям карт")
 @Severity(SeverityLevel.BLOCKER)
 @Tag("regress")
 public class SerchDebitCardTests extends TestBase {
 
     MainPage mainPage = new MainPage();
     SearchResultPage searchResultPage = new SearchResultPage();
-    Faker faker = new Faker(new Locale("ru"));
-    String food = faker.food().ingredient();
-    String minSum = String.valueOf(getRandomInt(10000, 20000));
-    String maxSum = String.valueOf(getRandomInt(20000, 100000));
-    String rentText = "Аренда";
-    String rentText2 = "Снять";
 
     @Test
     @DisplayName("Переход в раздел сайта дебетовая детская карта")
     void clickMenuPages() {
-        mainPage.openPage()
+        mainPage.openPage("")
                 .openFizicClientMenu()
-                .openChildCardsPage();
-        searchResultPage.healerHasText("Бесплатная дебетовая детская карта");
+                .openDebetCardsPage();
+        searchResultPage.healerHasText("Дебетовые карты");
     }
 
     @Test
-    @DisplayName("Поиск с заданным ценовым диапазоном")
-    void searchWithPriceParameter() {
-        mainPage.openPage();
+    @DisplayName("На странице дебетовая отфильтровать Премиальные карты")
+    void filterPremiumCard() {
+        mainPage.openPage("/cards/debit-cards/")
+                .filterPremiumCards();
+        searchResultPage.healerHasText("Премиальные дебетовые карты")
+                .filterResults("Premium");
     }
 
     @Test
-    @DisplayName("Поиск с верхним значением ценового диапазоноа")
-    void searchWithMaxPriceParameter() {
-        mainPage.openPage();
-
+    @DisplayName("На странице дебетовая карта нажать на фильтр Путешественнику")
+    void filterTravelerCard() {
+        mainPage.openPage("")
+                .openFizicClientMenu()
+                .openDebetCardsPage()
+                .filterTravelerCards();
+        searchResultPage.healerHasText("Дебетовые карты для путешествий")
+                .filterResults("ALL Airlines");
     }
 
     @Test
-    @DisplayName("Поиск в конкретном городе")
-    void searchWithCityParameter() {
-        mainPage.openPage();
+    @DisplayName("На странице дебетовая отфильтровать карты для автомобилиста")
+    void filterDriveCard() {
+        mainPage.openPage("/cards/debit-cards/")
+                .filterDriverCards();
+        searchResultPage.healerHasText("Дебетовые карты для водителей")
+                .filterResults("Tinkoff Drive");
     }
 
     @Test
-    @DisplayName("Поиск с заполнением всех параметров")
-    void searchWithAllParameters() {
-        mainPage.openPage();
+    @DisplayName("На странице дебетовая отфильтровать карты для геймера")
+    void filterGameCard() {
+        mainPage.openPage("/cards/debit-cards/")
+                .filterGamesCards();
+        searchResultPage.healerHasText("Дебетовые карты для геймеров")
+                .filterResults("ALL Games");
+    }
+
+    @Test
+    @DisplayName("На странице дебетовая отфильтровать карты для покупок")
+    void filterShoppingCard() {
+        mainPage.openPage("/cards/debit-cards/")
+                .filterShoppingCards();
+        searchResultPage.healerHasText("Дебетовые карты для покупок")
+                .filterResults("Black");
     }
 }

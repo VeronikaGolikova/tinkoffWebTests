@@ -12,7 +12,7 @@ public class RandomUtils {
     }
 
     public String getRandomGender() {
-        String[] genders = {"Male", "Female", "Other"};
+        String[] genders = {"Male", "Female"};
         return faker.options().option(genders);
     }
 
@@ -32,34 +32,5 @@ public class RandomUtils {
             randomDate = "0" + randomDate;
         };
         return randomDate;
-    }
-
-    public String getRandomLetterForSubj() {
-        String[] subj = {"e", "r", "t", "y", "u", "i", "o", "p", "a", "s", "d", "g", "h", "l", "c", "v", "b", "n", "m"};
-        return faker.options().option(subj);
-    }
-
-    public String getRandomHobbie() {
-        String[] hobbie = {"Sports", "Reading", "Music"};
-        return faker.options().option(hobbie);
-    }
-
-    public String getRandomState() {
-        String[] state = {"NCR", "Uttar Pradesh", "Haryana", "Rajasthan"};
-        return faker.options().option(state);
-    }
-
-    public String getRandomCity(String state) {
-        String[] city = null;
-        if(state.equals("NCR")) {
-            city = new String[]{"Delhi", "Gurgaon", "Noida"};
-        } else if (state.equals("Uttar Pradesh")) {
-            city = new String[]{"Agra", "Lucknow", "Merrut"};
-        } else if (state.equals("Haryana")) {
-            city = new String[]{"Karnal", "Panipat"};
-        } else if (state.equals("Rajasthan")) {
-            city = new String[]{"Jaipur", "Jaiselmer"};
-        }
-        return faker.options().option(city);
     }
 }
