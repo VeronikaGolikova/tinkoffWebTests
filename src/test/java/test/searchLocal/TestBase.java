@@ -19,7 +19,7 @@ public class TestBase {
         Configuration.browser = browser;
         Configuration.browserVersion = browserVersion;
         Configuration.browserSize = browserSize;
-        Configuration.baseUrl = "https://www.cian.ru/";
+        Configuration.baseUrl = "http://testbase.ru/";
     }
 
     @AfterEach

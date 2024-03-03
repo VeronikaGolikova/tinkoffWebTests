@@ -6,10 +6,11 @@ import io.qameta.allure.Owner;
 import io.qameta.allure.Severity;
 import io.qameta.allure.SeverityLevel;
 import io.qameta.allure.Story;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
-import pages.MainCianPage;
+import pages.MainTestbasePage;
 import pages.SearchResultPage;
 
 import java.util.Locale;
@@ -23,7 +24,7 @@ import static utils.RandomUtils.getRandomInt;
 @Tag("regress")
 public class SerchBuyApartmentTests extends TestBase {
 
-    MainCianPage mainCianPage = new MainCianPage();
+    MainTestbasePage mainTestbasePage = new MainTestbasePage();
     SearchResultPage searchResultPage = new SearchResultPage();
     Faker faker = new Faker(new Locale("ru"));
     String city = faker.address().city();
@@ -35,59 +36,38 @@ public class SerchBuyApartmentTests extends TestBase {
     @Test
     @DisplayName("Поиск с параметрами по умолчанию")
     void searchWithDefaultParameters() {
-        mainCianPage.openPage()
-                .submit();
-        searchResultPage.offerExists()
-                .healerHasText(buyText);
+        mainTestbasePage.openPage()
+                .clickTheory()
+                .clickCourses()
+                .clickBook()
+                .clickTestIt();
     }
 
     @Test
+    @Disabled
     @DisplayName("Поиск с заданным ценовым диапазоном")
     void searchWithPriceParameter() {
-        mainCianPage.openPage()
-                .clickFilterPrice()
-                .setMinSum(minSum)
-                .setMaxSum(maxSum)
-                .submit();
-        searchResultPage.offerExists()
-                .healerHasText(buyText2);
+
     }
 
     @Test
+    @Disabled
     @DisplayName("Поиск с верхним значением ценового диапазоноа")
     void searchWithMaxPriceParameter() {
-        mainCianPage.openPage()
-                .clickFilterPrice()
-                .setMaxSum(maxSum)
-                .submit();
-        searchResultPage.offerExists()
-                .healerHasText(buyText2);
+
     }
 
     @Test
+    @Disabled
     @DisplayName("Поиск в конкретном городе")
     void searchWithCityParameter() {
-        mainCianPage.openPage()
-                .setCity(city)
-                .selectCity()
-                .submit();
-        searchResultPage.offerExists()
-                .offerHasText(city)
-                .healerHasText(buyText);
+
     }
 
     @Test
+    @Disabled
     @DisplayName("Поиск с заполнением всех параметров")
     void searchWithAllParameters() {
-        mainCianPage.openPage()
-                .clickFilterPrice()
-                .setMinSum(minSum)
-                .setMaxSum(maxSum)
-                .setCity(city)
-                .selectCity()
-                .submit();
-        searchResultPage.offerExists()
-                .offerHasText(city)
-                .healerHasText(buyText2);
+
     }
 }

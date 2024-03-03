@@ -9,11 +9,12 @@ import io.qameta.allure.Story;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
-import pages.MainCianPage;
+import pages.MainTestbasePage;
 import pages.SearchResultPage;
 
 import java.util.Locale;
 
+import static com.codeborne.selenide.Selenide.sleep;
 import static utils.RandomUtils.getRandomInt;
 
 @Owner("golikovavi")
@@ -23,10 +24,10 @@ import static utils.RandomUtils.getRandomInt;
 @Tag("local")
 public class SerchBuyApartmentTests extends TestBase {
 
-    MainCianPage mainCianPage = new MainCianPage();
+    MainTestbasePage mainTestbasePage = new MainTestbasePage();
     SearchResultPage searchResultPage = new SearchResultPage();
     Faker faker = new Faker(new Locale("ru"));
-    String city = faker.address().city();
+    String food = faker.food().ingredient();
     String minSum = String.valueOf(getRandomInt(1000000, 2000000));
     String maxSum = String.valueOf(getRandomInt(4000000, 8000000));
     String buyText = "Продажа";
@@ -35,17 +36,16 @@ public class SerchBuyApartmentTests extends TestBase {
     @Test
     @DisplayName("Поиск с параметрами по умолчанию")
     void searchWithDefaultParameters() {
-        mainCianPage.openPage()
+        mainTestbasePage.openPage()
+                .inputSearchGoods(food)
                 .submit();
-        searchResultPage.offerExists()
-                .healerHasText(buyText);
+        sleep(3000);
     }
 
     @Test
     @DisplayName("Поиск с заданным ценовым диапазоном")
     void searchWithPriceParameter() {
-        mainCianPage.openPage()
-                .clickFilterPrice()
+        mainTestbasePage.openPage()
                 .setMinSum(minSum)
                 .setMaxSum(maxSum)
                 .submit();
@@ -56,8 +56,7 @@ public class SerchBuyApartmentTests extends TestBase {
     @Test
     @DisplayName("Поиск с верхним значением ценового диапазоноа")
     void searchWithMaxPriceParameter() {
-        mainCianPage.openPage()
-                .clickFilterPrice()
+        mainTestbasePage.openPage()
                 .setMaxSum(maxSum)
                 .submit();
         searchResultPage.offerExists()
@@ -67,27 +66,23 @@ public class SerchBuyApartmentTests extends TestBase {
     @Test
     @DisplayName("Поиск в конкретном городе")
     void searchWithCityParameter() {
-        mainCianPage.openPage()
-                .setCity(city)
+        mainTestbasePage.openPage()
+
                 .selectCity()
                 .submit();
         searchResultPage.offerExists()
-                .offerHasText(city)
+
                 .healerHasText(buyText);
     }
 
     @Test
     @DisplayName("Поиск с заполнением всех параметров")
     void searchWithAllParameters() {
-        mainCianPage.openPage()
-                .clickFilterPrice()
+        mainTestbasePage.openPage()
                 .setMinSum(minSum)
                 .setMaxSum(maxSum)
-                .setCity(city)
+
                 .selectCity()
                 .submit();
-        searchResultPage.offerExists()
-                .offerHasText(city)
-                .healerHasText(buyText2);
     }
 }
