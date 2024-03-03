@@ -9,7 +9,7 @@ import static com.codeborne.selenide.Selenide.open;
 public class MainPage {
     private final SelenideElement
             fizClient = $x("//span[@data-test='menu-item-0-title']"),
-            debetCard = $x("//div[@data-test='clickableArea text-item-0-1']"),
+            debetCard = $x("//a[@href='/cards/debit-cards/']"),
             premiumDebetCard = $x("//a[@href='/cards/debit-cards/premium/']"),
             travelerDebetCard = $x("//a[@href='/cards/debit-cards/travel/']"),
             driverDebetCard = $x("//a[@href='/cards/debit-cards/driver/']"),

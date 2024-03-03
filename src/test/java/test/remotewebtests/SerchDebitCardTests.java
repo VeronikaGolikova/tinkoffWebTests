@@ -20,7 +20,7 @@ public class SerchDebitCardTests extends TestBase {
     SearchResultPage searchResultPage = new SearchResultPage();
 
     @Test
-    @DisplayName("Переход в раздел сайта дебетовая детская карта")
+    @DisplayName("Переход в раздел сайта дебетовая карта")
     void clickMenuPages() {
         mainPage.openPage("")
                 .openFizicClientMenu()
