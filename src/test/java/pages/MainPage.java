@@ -3,13 +3,16 @@ package pages;
 import com.codeborne.selenide.SelenideElement;
 import io.qameta.allure.Step;
 
+import static com.codeborne.selenide.Selectors.byText;
+import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$x;
 import static com.codeborne.selenide.Selenide.open;
 
 public class MainPage {
     private final SelenideElement
-            fizClient = $x("//span[@data-test='menu-item-0-title']"),
+            fizClient = $(byText("Частным лицам")),
             debetCard = $x("//a[@href='/cards/debit-cards/']"),
+//            debetCard = $(byText("Дебетовые карты")),
             premiumDebetCard = $x("//a[@href='/cards/debit-cards/premium/']"),
             travelerDebetCard = $x("//a[@href='/cards/debit-cards/travel/']"),
             driverDebetCard = $x("//a[@href='/cards/debit-cards/driver/']"),
