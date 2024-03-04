@@ -14,6 +14,7 @@ import pages.SearchResultPage;
 @Epic("Фильтрация по категориям карт")
 @Severity(SeverityLevel.BLOCKER)
 @Tag("regress")
+@Tag("owner")
 public class SerchDebitCardTests extends TestBase {
 
     MainPage mainPage = new MainPage();
