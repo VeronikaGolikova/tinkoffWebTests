@@ -1,0 +1,17 @@
+{
+  "base": {
+    "project": "Tinkoff Project",
+    "environment": "environment",
+    "comment": "Comment",
+    "reportLink": "",
+    "language": "en",
+    "messenger": "telegram",
+    "allureFolder": "https://jenkins.autotests.cloud/job/24-ShocoArts-TestsWithOwner/allure/",
+    "enableChart": true
+  },
+  "telegram": {
+    "token": "7167154959:AAE8-B7ZnT1ud0gRaKYIBUCIZ4PiaRyLoTU",
+    "chat": "7167154959",
+    "replyTo": ""
+  }
+}
