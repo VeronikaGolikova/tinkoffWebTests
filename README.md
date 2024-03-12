@@ -82,7 +82,7 @@ regress_with_owner
 * <code>BROWSER_SIZE</code> – размер окна браузера, в котором будут выполняться тесты. По умолчанию – <code>1920x1080</code>.
 * <code>REMOTE_URL</code> – адрес удаленного сервера, на котором будут запускаться тесты. По умолчанию – <code>https://user1:1234@selenoid.autotests.cloud/wd/hub</code>
 
-## <img width="4%" style="vertical-align:middle" title="Jenkins" src="media/logos/Jenkins.svg"> [Сборка](https://jenkins.autotests.cloud/job/024_Kwlad1ck_DromRu/) в Jenkins
+## <img width="4%" style="vertical-align:middle" title="Jenkins" src="media/logos/jenkins-original.svg"> [Сборка](https://jenkins.autotests.cloud/job/024_Kwlad1ck_DromRu/) в Jenkins
 
 Для запуска сборки необходимо перейти в раздел <code>Build with parameters</code> и нажать кнопку <code>Build</code>.
 <p align="center">
@@ -90,23 +90,9 @@ regress_with_owner
 </p>
 
 
-После выполнения сборки, в блоке <code>Build History</code> напротив номера сборки появятся значки <code>Allure TestOps</code> и <code>Allure Report</code>, при клике на которые откроется страница с сформированным html-отчетом и тестовыми артефактами.
+После выполнения сборки, в блоке <code>Build History</code> напротив номера сборки появятся значок <code>Allure Report</code>, при клике на который откроется страница с сформированным html-отчетом и тестовыми артефактами.
 
-## <img width="4%" style="vertical-align:middle" title="Allure TestOps" src="media/logos/AllureTestOps.svg"> [Интеграция](https://allure.autotests.cloud/project/4102/dashboards) с Allure TestOps
-
-На *Dashboard* в <code>Allure TestOps</code> видна статистика количества тестов: сколько из них активных/находяться в ревью/черновик/устаревшие, а так же количество ручных и автоматизированных тестов. Результаты выполнения тестов приходят в автоматическом режиме по интеграции при каждом запуске сборки проекта.
-
-<p align="center">
-<img title="Dashboard Allure TestOps" src="media/screenshots/TestOpsDashboard.png">
-</p>
-
-### Результат выполнения сборки #10
-
-<p align="center">
-<img title="Сборка#10 в Allure TestOps" src="media/screenshots/TestOpsResult-10.png">
-</p>
-
-## <img width="4%" style="vertical-align:middle" title="Allure Report" src="media/logos/AllureReport.svg"> [Пример](https://jenkins.autotests.cloud/job/024_Kwlad1ck_DromRu/10/allure/) Allure-отчета
+## <img width="4%" style="vertical-align:middle" title="Allure Report" src="media/logos/Allure.svg"> [Пример](https://jenkins.autotests.cloud/job/024_Kwlad1ck_DromRu/10/allure/) Allure-отчета
 ### Основаня страница отчета
 
 
