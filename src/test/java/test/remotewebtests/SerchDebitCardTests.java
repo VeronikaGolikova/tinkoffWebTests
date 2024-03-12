@@ -21,7 +21,7 @@ public class SerchDebitCardTests extends TestBase {
     SearchResultPage searchResultPage = new SearchResultPage();
 
     @Test
-    @DisplayName("Переход в раздел сайта дебетовая карта")
+    @DisplayName("Переход в раздел 'Дебетовая карта'")
     void clickMenuPages() {
         mainPage.openPage("")
                 .openFizicClientMenu();
@@ -29,7 +29,7 @@ public class SerchDebitCardTests extends TestBase {
     }
 
     @Test
-    @DisplayName("На странице дебетовая отфильтровать Премиальные карты")
+    @DisplayName("Фильтрация Премиальных карт")
     void filterPremiumCard() {
         mainPage.openPage("/cards/debit-cards/")
                 .filterPremiumCards();
@@ -38,7 +38,7 @@ public class SerchDebitCardTests extends TestBase {
     }
 
     @Test
-    @DisplayName("На странице дебетовая карта нажать на фильтр Путешественнику")
+    @DisplayName("Фильтрация карт Путешественнику")
     void filterTravelerCard() {
         mainPage.openPage("")
                 .openFizicClientMenu()
@@ -48,7 +48,7 @@ public class SerchDebitCardTests extends TestBase {
     }
 
     @Test
-    @DisplayName("На странице дебетовая отфильтровать карты для автомобилиста")
+    @DisplayName("Фильтрация карт для автомобилиста")
     void filterDriveCard() {
         mainPage.openPage("/cards/debit-cards/")
                 .filterDriverCards();
@@ -57,7 +57,7 @@ public class SerchDebitCardTests extends TestBase {
     }
 
     @Test
-    @DisplayName("На странице дебетовая отфильтровать карты для геймера")
+    @DisplayName("Фильтрация карт для геймера")
     void filterGameCard() {
         mainPage.openPage("/cards/debit-cards/")
                 .filterGamesCards();
@@ -66,7 +66,7 @@ public class SerchDebitCardTests extends TestBase {
     }
 
     @Test
-    @DisplayName("На странице дебетовая отфильтровать карты для покупок")
+    @DisplayName("Фильтрация карт для покупок")
     void filterShoppingCard() {
         mainPage.openPage("/cards/debit-cards/")
                 .filterShoppingCards();
