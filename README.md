@@ -112,15 +112,13 @@ regress_with_owner
 <img title="Графики прохождения сборки в отчёте Allure" src="media/screenshots/AllureCharts.png">
 </p>
 
-<p align="center">
-<img width="70%" title="Уведомление в Telegram" src="media/screenshots/TelegramAlerts.png">
-</p>
-
 ## <img width="4%" style="vertical-align:middle" title="Telegram" src="media/logos/Telegram.svg"> Уведомления в [Telegram канал](https://t.me/publicDromAlerts) с использованием бота
-
 
 После завершения сборки и прохождения всех тестовых сценариев в [Telegram канал](https://t.me/publicDromAlerts) приходит оповещение с отчетом о результатах прохождения автотестов.
 
+<p align="center">
+<img width="70%" title="Уведомление в Telegram" src="media/screenshots/TelegramAlerts.png">
+</p>
 
 ## <img width="4%" style="vertical-align:middle" title="Selenoid" src="media/logos/Selenoid.svg"> Видео пример запуска автотестов в Selenoid
 
