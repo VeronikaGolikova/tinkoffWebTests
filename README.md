@@ -53,7 +53,7 @@
 ```
 gradle clean test
 ```
-### Запуск тестов из Jenkins (с указанием параметров)
+### Запуск тестов из Jenkins (с указанием окружения запуска тестов)
 ```
 gradle clean test -Denvironment=remote
 ```

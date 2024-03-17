@@ -2,9 +2,11 @@ package config;
 
 import org.aeonbits.owner.Config;
 
+@Config.LoadPolicy(Config.LoadType.MERGE)
 @Config.Sources({
-        "classpath:config/${environment}.properties",
-        "classpath:local.properties"
+        "system:properties",
+//        "classpath:config/local.properties",
+        "classpath:config/${environment}.properties"
 })
 public interface DriverConfig extends Config {
     @Key("browser.name")
@@ -22,4 +24,7 @@ public interface DriverConfig extends Config {
     @Key("remote.url")
     @DefaultValue("http://localhost:4444")
     String remoteUrl();
+
+//    @DefaultValue("local")
+//    String environment();
 }
