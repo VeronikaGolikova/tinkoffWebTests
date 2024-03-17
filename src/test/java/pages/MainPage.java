@@ -32,12 +32,6 @@ public class MainPage {
         return this;
     }
 
-    @Step("Перейти на страницу дебетовых карт")
-    public MainPage openDebetCardsPage() {
-        debetCard.click();
-        return this;
-    }
-
     @Step("Перейти на вкладку премиальных карт")
     public MainPage filterPremiumCards() {
         premiumDebetCard.click();
@@ -63,9 +57,4 @@ public class MainPage {
         shoppingDebetCard.click();
         return this;
     }
-
-
-
-
-
 }

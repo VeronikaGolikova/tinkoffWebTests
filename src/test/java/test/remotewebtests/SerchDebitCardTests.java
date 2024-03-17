@@ -5,7 +5,6 @@ import io.qameta.allure.Owner;
 import io.qameta.allure.Severity;
 import io.qameta.allure.SeverityLevel;
 import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import pages.MainPage;
 import pages.SearchResultPage;
@@ -13,8 +12,6 @@ import pages.SearchResultPage;
 @Owner("golikovavi")
 @Epic("Фильтрация по категориям карт")
 @Severity(SeverityLevel.BLOCKER)
-@Tag("regress")
-@Tag("owner")
 public class SerchDebitCardTests extends TestBase {
 
     MainPage mainPage = new MainPage();
@@ -25,7 +22,7 @@ public class SerchDebitCardTests extends TestBase {
     void clickMenuPages() {
         mainPage.openPage("")
                 .openFizicClientMenu();
-        searchResultPage.healerHasText("Дебетовые карты");
+        searchResultPage.headerHasText("Дебетовые карты");
     }
 
     @Test
@@ -33,7 +30,7 @@ public class SerchDebitCardTests extends TestBase {
     void filterPremiumCard() {
         mainPage.openPage("/cards/debit-cards/")
                 .filterPremiumCards();
-        searchResultPage.healerHasText("Премиальные дебетовые карты")
+        searchResultPage.headerHasText("Премиальные дебетовые карты")
                 .filterResults("Premium");
     }
 
@@ -43,7 +40,7 @@ public class SerchDebitCardTests extends TestBase {
         mainPage.openPage("")
                 .openFizicClientMenu()
                 .filterTravelerCards();
-        searchResultPage.healerHasText("Дебетовые карты для путешествий")
+        searchResultPage.headerHasText("Дебетовые карты для путешествий")
                 .filterResults("ALL Airlines");
     }
 
@@ -52,7 +49,7 @@ public class SerchDebitCardTests extends TestBase {
     void filterDriveCard() {
         mainPage.openPage("/cards/debit-cards/")
                 .filterDriverCards();
-        searchResultPage.healerHasText("Дебетовые карты для водителей")
+        searchResultPage.headerHasText("Дебетовые карты для водителей")
                 .filterResults("Tinkoff Drive");
     }
 
@@ -61,7 +58,7 @@ public class SerchDebitCardTests extends TestBase {
     void filterGameCard() {
         mainPage.openPage("/cards/debit-cards/")
                 .filterGamesCards();
-        searchResultPage.healerHasText("Дебетовые карты для геймеров")
+        searchResultPage.headerHasText("Дебетовые карты для геймеров")
                 .filterResults("ALL Games");
     }
 
@@ -70,7 +67,7 @@ public class SerchDebitCardTests extends TestBase {
     void filterShoppingCard() {
         mainPage.openPage("/cards/debit-cards/")
                 .filterShoppingCards();
-        searchResultPage.healerHasText("Дебетовые карты для покупок")
+        searchResultPage.headerHasText("Дебетовые карты для покупок")
                 .filterResults("Black");
     }
 }

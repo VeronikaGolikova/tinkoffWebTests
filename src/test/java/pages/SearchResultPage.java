@@ -12,7 +12,7 @@ public class SearchResultPage {
             filterCards = $x("//div[@role='banner']");;
 
     @Step("Загаловок содержит текст")
-    public SearchResultPage healerHasText(String someText) {
+    public SearchResultPage headerHasText(String someText) {
         headerText.shouldHave(text(someText));
         return this;
     }
@@ -23,9 +23,4 @@ public class SearchResultPage {
         return this;
     }
 
-    @Step("Результат поиска содержит текст {value}")
-    public SearchResultPage offerHasText(String value) {
-//        offerCard.shouldHave(text(value));
-        return this;
-    }
 }

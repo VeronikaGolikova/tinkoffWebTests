@@ -49,21 +49,3 @@ tasks.withType(Test) {
         }
     }
 }
-
-task local_regress(type: Test) {
-    useJUnitPlatform {
-        includeTags("local")
-    }
-}
-
-task regress_with_properties(type: Test) {
-    useJUnitPlatform {
-        includeTags("regress")
-    }
-}
-
-task regress_with_owner(type: Test) {
-    useJUnitPlatform {
-        includeTags("owner")
-    }
-}

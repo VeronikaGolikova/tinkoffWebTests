@@ -51,17 +51,16 @@
 
 ### Локальный запуск тестов из терминала (с параметрами по умолчанию)
 ```
-gradle clean regress_with_owner
+gradle clean test
 ```
 ### Запуск тестов из Jenkins (с указанием параметров)
 ```
-gradle clean regress_with_owner -Denvironment=remote
+gradle clean test -Denvironment=remote
 ```
 При необходимости также можно переопределить параметры запуска
 
 ```
-clean
-regress_with_owner
+clean test
 -Denvironment=${ENVIRONMENT}
 -Dbrowser=${BROWSER}
 -Dbrowser_version=${BROWSER_VERSION}
