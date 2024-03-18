@@ -25,7 +25,7 @@ public class TestBase {
         Configuration.browserSize = driverConfig.browserSize();
         SelenideLogger.addListener("allure", new AllureSelenide());
 
-        if (driverConfig.isRemote())
+        if ((driverConfig.environment().toString()).equals("remote"))
         {
             Configuration.remote = driverConfig.remoteUrl();
             DesiredCapabilities capabilities = new DesiredCapabilities();
