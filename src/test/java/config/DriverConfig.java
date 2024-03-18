@@ -5,7 +5,6 @@ import org.aeonbits.owner.Config;
 @Config.LoadPolicy(Config.LoadType.MERGE)
 @Config.Sources({
         "system:properties",
-//        "classpath:config/local.properties",
         "classpath:config/${environment}.properties"
 })
 public interface DriverConfig extends Config {
@@ -14,17 +13,19 @@ public interface DriverConfig extends Config {
     String browserName();
 
     @Key("browser.version")
-    @DefaultValue("113.0")
+    @DefaultValue("122.0")
     String browserVersion();
 
     @Key("browser.size")
     @DefaultValue("1920x1080")
     String browserSize();
 
-    @Key("remote.url")
-    @DefaultValue("http://localhost:4444")
-    String remoteUrl();
+    @DefaultValue("eager")
+    String pageLoadStrategy();
 
-//    @DefaultValue("local")
-//    String environment();
+    @DefaultValue("false")
+    Boolean isRemote();
+
+    @Key("remote.url")
+    String remoteUrl();
 }

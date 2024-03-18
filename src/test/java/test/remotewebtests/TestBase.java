@@ -17,20 +17,24 @@ public class TestBase {
 
     @BeforeEach
     void beforeEach() {
-        System.setProperty("environment", System.getProperty("environment", "local"));
-        DriverConfig config = ConfigFactory.create(DriverConfig.class, System.getProperties());
-        String environment = System.getProperty("environment");
-        Configuration.pageLoadStrategy = "eager";
+        DriverConfig driverConfig = ConfigFactory.create(DriverConfig.class);
         Configuration.baseUrl = "https://www.tinkoff.ru/";
-
-        DesiredCapabilities capabilities = new DesiredCapabilities();
-        capabilities.setCapability("selenoid:options", Map.<String, Object>of(
-                "enableVNC", true,
-                "enableVideo", true
-        ));
-        Configuration.browserCapabilities = capabilities;
-
+        Configuration.pageLoadStrategy = driverConfig.pageLoadStrategy();
+        Configuration.browser = driverConfig.browserName();
+        Configuration.browserVersion = driverConfig.browserVersion();
+        Configuration.browserSize = driverConfig.browserSize();
         SelenideLogger.addListener("allure", new AllureSelenide());
+
+        if (driverConfig.isRemote())
+        {
+            Configuration.remote = driverConfig.remoteUrl();
+            DesiredCapabilities capabilities = new DesiredCapabilities();
+            capabilities.setCapability("selenoid:options", Map.<String, Object>of(
+                    "enableVNC", true,
+                    "enableVideo", true
+            ));
+            Configuration.browserCapabilities = capabilities;
+        }
     }
 
     @AfterEach
