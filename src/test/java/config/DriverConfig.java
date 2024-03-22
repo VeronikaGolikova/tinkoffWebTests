@@ -23,9 +23,6 @@ public interface DriverConfig extends Config {
     @DefaultValue("eager")
     String pageLoadStrategy();
 
-    @DefaultValue("local")
-    String server();
-
     @Key("remote.url")
     String remoteUrl();
 }
