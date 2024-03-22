@@ -17,7 +17,7 @@ import java.util.Map;
 public class TestBase {
 
     @BeforeAll
-    void setUpConfig() {
+    static void setUpConfig() {
         DriverConfig driverConfig = ConfigFactory.create(DriverConfig.class);
         Configuration.baseUrl = "https://www.tinkoff.ru/";
         Configuration.pageLoadStrategy = driverConfig.pageLoadStrategy();
