@@ -51,21 +51,21 @@
 
 ### Локальный запуск тестов из терминала (с параметрами по умолчанию)
 ```
-gradle clean test
+gradle clean test -Denvironment=local
 ```
-### Запуск тестов из Jenkins (с указанием окружения запуска тестов)
+### Удаленный запуск тестов из терминала (с параметрами по умолчанию)
 ```
 gradle clean test -Denvironment=remote
 ```
-При необходимости также можно переопределить параметры запуска
+
+### Запуск тестов из Jenkins с определением параметров запуска
 
 ```
 clean test
--Denvironment=${ENVIRONMENT}
--Dbrowser=${BROWSER}
--Dbrowser_version=${BROWSER_VERSION}
--Dbrowser_size=${BROWSER_SIZE}
--DremoteUrl=${REMOTE_URL}
+-D"browser.name=${BROWSER}"
+-D"browser.version=${BROWSER_VERSION}"
+-D"browser.size=${BROWSER_SIZE}"
+-D"remote.url=${REMOTE_URL}"
 ```
 
 <p align="center">
@@ -74,7 +74,7 @@ clean test
 
 ### Параметры сборки
 
-* <code>ENVIRONMENT</code> – параметр, который определяет локальный или удаленный запуск. По умолчанию – <code>удаленно</code>.
+* <code>ENVIRONMENT</code> – параметр, который определяет файл из которого будут переданы параметры запуска тестов.
 * <code>BROWSER</code> – браузер, в котором будут выполняться тесты. По умолчанию – <code>chrome</code>.
 * <code>BROWSER_VERSION</code> – версия браузера, в которой будут выполняться тесты. По умолчанию – <code>100.0</code>.
 * <code>BROWSER_SIZE</code> – размер окна браузера, в котором будут выполняться тесты. По умолчанию – <code>1920x1080</code>.
