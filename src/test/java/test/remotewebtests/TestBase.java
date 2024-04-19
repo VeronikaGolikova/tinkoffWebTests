@@ -3,6 +3,7 @@ package test.remotewebtests;
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.logevents.SelenideLogger;
+import com.github.javafaker.Faker;
 import config.DriverConfig;
 import helpers.Attach;
 import io.qameta.allure.selenide.AllureSelenide;
@@ -15,6 +16,8 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 import java.util.Map;
 
 public class TestBase {
+
+    Faker faker = new Faker();
 
     @BeforeAll
     static void setUpConfig() {
