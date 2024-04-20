@@ -8,7 +8,6 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import pages.AnketaPage;
 import pages.MainPage;
-import pages.SelectDesignPage;
 import pages.SmsPage;
 import utils.RandomUtils;
 
@@ -18,40 +17,28 @@ import utils.RandomUtils;
 public class SelectDebitCardTests extends TestBase {
 
     MainPage mainPage = new MainPage();
-    SelectDesignPage selectDesignPage = new SelectDesignPage();
     AnketaPage anketaPage = new AnketaPage();
     SmsPage smsPage = new SmsPage();
     RandomUtils randomUtils = new RandomUtils();
-    private final String URL = "/cards/debit-cards/";
+    private final static String URL = "/cards/debit-cards/";
+    private final static String FIRST_DESIGN = "https://imgproxy.cdn-tinkoff.ru/card_design_desktop_x1/aHR0cHM6Ly9hY2RuLnRpbmtvZmYucnUvc3RhdGljL3BhZ2VzL2ZpbGVzLzkxOTRhMzIyLWIxMzMtNGJkNy1iMDI4LWY3OTg4ODcyYzRkMS5wbmc=";
+    private final static String SECOND_DESIGN = "https://imgproxy.cdn-tinkoff.ru/card_design_desktop_x1/aHR0cHM6Ly9hY2RuLnRpbmtvZmYucnUvc3RhdGljL3BhZ2VzL2ZpbGVzLzVhMGRjZDc5LTVjZGYtNGQ0Mi1iMTc3LWJmOWMzMDcyZDhhNi5wbmc=";    @Test
 
-    @Test
-    @DisplayName("Выбор дизайна карты в слайдере")
-    void filterShoppingCard() {
+    @DisplayName("Проверить отображение предвыбранного дизайна карты")
+    void cardHasDesignValue() {
         mainPage.openPage(URL)
-                .filterShoppingCards()
-                .headerHasText("Дебетовые карты для покупок")
-                .filterResultsHasText("Black")
-                .clickMoreButton();
-        selectDesignPage.titleHasText()
-                .clickSlider()
-                .imgHasValue("Вулкан Толбачик, Камчатский край")
-                .clickSlider()
-                .imgHasValue("Остров Ижилхей, Байкал, Иркутская область");
+                .clickGetCardBatton();
+        anketaPage.checkCardDesign(FIRST_DESIGN);
     }
 
     @Test
-    @DisplayName("Перейти к заполнению анкеты после выбора дизайна")
-    void openAnketaWithCardDisign() {
+    @DisplayName("Возможность изменить предвыбранный дизайн карты")
+    void changeCardDesign() {
         mainPage.openPage(URL)
-                .filterShoppingCards()
-                .headerHasText("Дебетовые карты для покупок")
-                .filterResultsHasText("Black")
-                .clickMoreButton();
-        selectDesignPage.titleHasText()
-                .clickSlider()
-                .imgHasValue("Вулкан Толбачик, Камчатский край")
-                .clickSelectThisCard();
-        anketaPage.checkCardDesign();
+                .clickGetCardBatton();
+        anketaPage.checkCardDesign(FIRST_DESIGN)
+                .changeCardDesign()
+                .checkCardDesign(SECOND_DESIGN);
     }
 
     @Test

@@ -11,6 +11,7 @@ public class AnketaPage {
 
     private final SelenideElement
             cardDesign = $x("//div[@data-qa-type='uikit/individualDesign.container']//img"),
+            secondCardDesign = $x("//div[@data-qa-type='uikit/individualDesign.preview']"),
             submitButton = $x("//button[@name='submit']"),
             clickFioField = $x("//div[@data-qa-type='uikit/inputFio.inputBox uikit/inputFio.inputBox_required']"),
             inputFioField = $x("//input[@data-qa-type='uikit/inputFio.value.input']"),
@@ -22,11 +23,17 @@ public class AnketaPage {
             progressbar = $x("//div[@data-qa-type='uikit/sidebar.subtitle']");
 
     @Step("Проверить, что в анкете отображается выбранный дизайн карты")
-    public AnketaPage checkCardDesign() {
+    public AnketaPage checkCardDesign(String design) {
         cardDesign.shouldHave(
                 Condition.attribute(
                         "src",
-                        "https://imgproxy.cdn-tinkoff.ru/card_design_desktop_x1/aHR0cHM6Ly9hY2RuLnRpbmtvZmYucnUvc3RhdGljL3BhZ2VzL2ZpbGVzLzVhMGRjZDc5LTVjZGYtNGQ0Mi1iMTc3LWJmOWMzMDcyZDhhNi5wbmc="));
+                        design));
+        return this;
+    }
+
+    @Step("Изменить дизайн карты")
+    public AnketaPage changeCardDesign() {
+        secondCardDesign.click();
         return this;
     }
 

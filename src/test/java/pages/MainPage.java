@@ -9,6 +9,7 @@ import static com.codeborne.selenide.Selenide.open;
 
 public class MainPage {
     private final SelenideElement
+            getCardMainButton = $x("//a[@href='/cards/debit-cards/tinkoff-black/?internal_source=home_main_block_button#form']"),
             shoppingDebetCard = $x("//a[@href='/cards/debit-cards/shopping/']"),
             headerText = $x("//h1[@data-schema-path='title']"),
             filterCards = $x("//div[@role='banner']"),
@@ -18,6 +19,12 @@ public class MainPage {
     @Step("Открыть страницу")
     public MainPage openPage(String url) {
         open(url);
+        return this;
+    }
+
+    @Step("Нажать на кнопку 'Оформить карту'")
+    public MainPage clickGetCard(){
+        getCardMainButton.click();
         return this;
     }
 
