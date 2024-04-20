@@ -100,7 +100,10 @@ public class SelectDebitCardTests extends TestBase {
     void birthFieldValidationIncorrectDate() {
         mainPage.openPage(URL)
                 .clickGetCardBatton();
-        anketaPage.clickBirthField()
+        anketaPage.clickFioField()
+                .inputFio(randomUtils.getRandomFullName())
+                .inputPhone(randomUtils.getRandomPhoneNumber(10))
+                .clickBirthField()
                 .inputBirth(randomUtils.getRandomBirthDateOfAge(1, 13))
                 .clickSubmitButton()
                 .birthMessageAppered("Вам должно быть от 14 до 100 лет");
