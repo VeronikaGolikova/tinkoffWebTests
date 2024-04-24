@@ -72,6 +72,8 @@ clean test
 <img title="Запуск с параметрами" src="media/screenshots/JenkinsStart-new.png">
 </p>
 
+___
+
 ### Параметры сборки
 
 * <code>ENVIRONMENT</code> – параметр, который определяет файл из которого будут переданы параметры запуска тестов.
@@ -80,7 +82,10 @@ clean test
 * <code>BROWSER_SIZE</code> – размер окна браузера, в котором будут выполняться тесты. По умолчанию – <code>1920x1080</code>.
 * <code>REMOTE_URL</code> – адрес удаленного сервера, на котором будут запускаться тесты. По умолчанию – <code>https://user1:1234@selenoid.autotests.cloud/wd/hub</code>
 
+___
+
 ## <img width="4%" style="vertical-align:middle" title="Jenkins" src="media/logos/jenkins-original.svg"> [Сборка](https://jenkins.autotests.cloud/job/024_Kwlad1ck_DromRu/) в Jenkins
+
 
 Для запуска сборки необходимо перейти в раздел <code>Build with parameters</code> и нажать кнопку <code>Build</code>.
 <p align="center">
@@ -89,6 +94,8 @@ clean test
 
 
 После выполнения сборки, в блоке <code>Build History</code> напротив номера сборки появятся значок <code>Allure Report</code>, при клике на который откроется страница с сформированным html-отчетом и тестовыми артефактами.
+
+___
 
 ## <img width="4%" style="vertical-align:middle" title="Allure Report" src="media/logos/Allure.svg"> [Пример](https://jenkins.autotests.cloud/job/024_Kwlad1ck_DromRu/10/allure/) Allure-отчета
 ### Основаня страница отчета
@@ -110,6 +117,32 @@ clean test
 <img title="Графики прохождения сборки в отчёте Allure" src="media/screenshots/AllureCharts.png">
 </p>
 
+
+___
+<a id="allure-testops"></a>
+## <img alt="Allure" height="25" src="images/logo/Allure2.svg" width="25"/></a>Интеграция с <a target="_blank" href="https://allure.autotests.cloud/project/2197/dashboards">Allure TestOps</a>
+____
+### *Allure TestOps Dashboard*
+
+<p align="center">  
+<img title="Allure TestOps Dashboard" src="images/screen/allure_overview.png" width="850">  
+</p>  
+
+### *Ручные тест-кейсы*
+
+<p align="center">  
+<img title="Allure Tests" src="images/screen/manual_tests.png" width="850">  
+</p>
+
+### *Авто тест-кейсы*
+
+<p align="center">  
+<img title="Allure TestOps Tests" src="images/screen/allure_autotestsN.png" width="850">  
+</p>
+
+___
+
+
 ## <img width="4%" style="vertical-align:middle" title="Telegram" src="media/logos/Telegram.svg"> Уведомления в [Telegram канал](https://t.me/publicDromAlerts) с использованием бота
 
 После завершения сборки и прохождения всех тестовых сценариев в [Telegram канал](https://t.me/publicDromAlerts) приходит оповещение с отчетом о результатах прохождения автотестов.
@@ -117,6 +150,8 @@ clean test
 <p align="center">
 <img width="70%" title="Уведомление в Telegram" src="media/screenshots/TelegramAlerts.png">
 </p>
+
+___
 
 ## <img width="4%" style="vertical-align:middle" title="Selenoid" src="media/logos/Selenoid.svg"> Видео пример запуска автотестов в Selenoid
 
