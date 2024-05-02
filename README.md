@@ -10,9 +10,8 @@
 - [Сборка в Jenkins](#-сборка-в-jenkins)
 - [Пример Allure-отчета](#-пример-allure-отчета)
 - [Интеграция с Allure TestOps](#-интеграция-с-allure-testOps)
-- [Интеграция с Jira](#-интеграция-с-jira)
 - [Уведомления в Telegram](#-уведомления-в-telegram-с-использованием-бота)
-- [Видео примера запуска тестов в Selenoid](#-видео-примера-запуска-тестов-в-selenoid)
+- [Видео примера запуска тестов в Selenoid](#img-width4-stylevertical-alignmiddle-titleselenoid-srcmedialogosselenoidsvg-видео-пример-запуска-автотестов-в-selenoid)
 
 ## :computer: Используемый стек
 
@@ -84,7 +83,7 @@ ___
 
 ___
 
-## <img width="4%" style="vertical-align:middle" title="Jenkins" src="media/logos/jenkins-original.svg"> [Сборка](https://jenkins.autotests.cloud/job/024_Kwlad1ck_DromRu/) в Jenkins
+## <img width="4%" style="vertical-align:middle" title="Jenkins" src="media/logos/jenkins-original.svg"> [Сборка](https://jenkins.autotests.cloud/job/24-ShocoArts-TinkoffTests/) в Jenkins
 
 
 Для запуска сборки необходимо перейти в раздел <code>Build with parameters</code> и нажать кнопку <code>Build</code>.
@@ -97,7 +96,7 @@ ___
 
 ___
 
-## <img width="4%" style="vertical-align:middle" title="Allure Report" src="media/logos/Allure.svg"> [Пример](https://jenkins.autotests.cloud/job/024_Kwlad1ck_DromRu/10/allure/) Allure-отчета
+## <img width="4%" style="vertical-align:middle" title="Allure Report" src="media/logos/Allure.svg"> [Пример](https://jenkins.autotests.cloud/job/24-ShocoArts-TinkoffTests/45/allure/) Allure-отчета
 ### Основаня страница отчета
 
 
@@ -120,7 +119,7 @@ ___
 
 ___
 <a id="allure-testops"></a>
-## <img alt="Allure" height="25" src="media/logos/Allure_TO.svg" width="25"/></a> Интеграция с <a target="_blank" href="https://allure.autotests.cloud/project/2197/dashboards">Allure TestOps</a>
+## <img alt="Allure" height="25" src="media/logos/Allure_TO.svg" width="25"/></a> Интеграция с <a target="_blank" href="https://allure.autotests.cloud/project/4193/dashboards">Allure TestOps</a>
 ____
 ### *Allure TestOps Dashboard*
 
@@ -143,9 +142,9 @@ ____
 ___
 
 
-## <img width="4%" style="vertical-align:middle" title="Telegram" src="media/logos/Telegram.svg"> Уведомления в [Telegram канал](https://t.me/publicDromAlerts) с использованием бота
+## <img width="4%" style="vertical-align:middle" title="Telegram" src="media/logos/Telegram.svg"> [Уведомления в Telegram](https://t.me/Golikova_Veronika_Alert_Bot) с использованием бота
 
-После завершения сборки и прохождения всех тестовых сценариев в [Telegram канал](https://t.me/publicDromAlerts) приходит оповещение с отчетом о результатах прохождения автотестов.
+После завершения сборки и прохождения всех тестовых сценариев в [Telegram канал](https://t.me/Golikova_Veronika_Alert_Bot) приходит оповещение с отчетом о результатах прохождения автотестов.
 
 <p align="center">
 <img width="70%" title="Уведомление в Telegram" src="media/screenshots/TelegramAlerts.png">

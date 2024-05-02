@@ -3,7 +3,6 @@ package test.remotewebtests;
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.logevents.SelenideLogger;
-import com.github.javafaker.Faker;
 import config.DriverConfig;
 import helpers.Attach;
 import io.qameta.allure.selenide.AllureSelenide;
@@ -17,13 +16,10 @@ import java.util.Map;
 
 public class TestBase {
 
-    Faker faker = new Faker();
-
     @BeforeAll
     static void setUpConfig() {
         DriverConfig driverConfig = ConfigFactory.create(DriverConfig.class);
         Configuration.baseUrl = "https://www.tinkoff.ru/";
-        Configuration.pageLoadStrategy = driverConfig.pageLoadStrategy();
         Configuration.browser = driverConfig.browserName();
         Configuration.browserVersion = driverConfig.browserVersion();
         Configuration.browserSize = driverConfig.browserSize();

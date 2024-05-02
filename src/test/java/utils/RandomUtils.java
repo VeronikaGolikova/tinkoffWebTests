@@ -11,7 +11,7 @@ public class RandomUtils {
     Faker ruFaker = new Faker(new Locale("ru"));
 
     public String getRandomPhoneNumber(int len) {
-        return "9" + ruFaker.phoneNumber().subscriberNumber(len-1);
+        return "9" + ruFaker.phoneNumber().subscriberNumber(len - 1);
     }
 
     public String getRandomPhoneNumberWithWrongRegionCode() {
