@@ -11,7 +11,7 @@
 - [Пример Allure-отчета](#-пример-allure-отчета)
 - [Интеграция с Allure TestOps](#-интеграция-с-allure-testOps)
 - [Уведомления в Telegram](#-уведомления-в-telegram-с-использованием-бота)
-- [Видео примера запуска тестов в Selenoid](#img-width4-stylevertical-alignmiddle-titleselenoid-srcmedialogosselenoidsvg-видео-пример-запуска-автотестов-в-selenoid)
+- [Видео примера запуска тестов в Selenoid](#-видео-пример-запуска-автотестов-в-selenoid)
 
 ## :computer: Используемый стек
 
@@ -79,7 +79,7 @@ ___
 * <code>BROWSER</code> – браузер, в котором будут выполняться тесты. По умолчанию – <code>chrome</code>.
 * <code>BROWSER_VERSION</code> – версия браузера, в которой будут выполняться тесты. По умолчанию – <code>100.0</code>.
 * <code>BROWSER_SIZE</code> – размер окна браузера, в котором будут выполняться тесты. По умолчанию – <code>1920x1080</code>.
-* <code>REMOTE_URL</code> – адрес удаленного сервера, на котором будут запускаться тесты. По умолчанию – <code>https://user1:1234@selenoid.autotests.cloud/wd/hub</code>
+* <code>REMOTE_URL</code> – адрес удаленного сервера, на котором будут запускаться тесты.
 
 ___
 
