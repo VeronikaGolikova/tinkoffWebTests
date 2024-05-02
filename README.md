@@ -64,7 +64,7 @@ clean test
 -D"browser.name=${BROWSER}"
 -D"browser.version=${BROWSER_VERSION}"
 -D"browser.size=${BROWSER_SIZE}"
--D"remote.url=${REMOTE_URL}"
+-D"remote.url=https://${AUTH}@${REMOTE_URL}/wd/hub"
 ```
 
 <p align="center">
@@ -80,6 +80,7 @@ ___
 * <code>BROWSER_VERSION</code> – версия браузера, в которой будут выполняться тесты. По умолчанию – <code>100.0</code>.
 * <code>BROWSER_SIZE</code> – размер окна браузера, в котором будут выполняться тесты. По умолчанию – <code>1920x1080</code>.
 * <code>REMOTE_URL</code> – адрес удаленного сервера, на котором будут запускаться тесты.
+* <code>AUTH</code> – креды для запуска на удаленном сервере.
 
 ___
 
@@ -96,7 +97,7 @@ ___
 
 ___
 
-## <img width="4%" style="vertical-align:middle" title="Allure Report" src="media/logos/Allure.svg"> [Пример](https://jenkins.autotests.cloud/job/24-ShocoArts-TinkoffTests/45/allure/) Allure-отчета
+## <img width="4%" style="vertical-align:middle" title="Allure Report" src="media/logos/Allure.svg"> [Пример](https://jenkins.autotests.cloud/job/24-ShocoArts-TinkoffTests/48/allure/) Allure-отчета
 ### Основаня страница отчета
 
 
